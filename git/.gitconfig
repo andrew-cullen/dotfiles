@@ -1,0 +1,5 @@
+[user]
+	name = andrew-cullen
+	email = andrew-cullen@users.noreply.github.com
+[credential]
+	helper = store
