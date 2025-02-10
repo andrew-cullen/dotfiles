@@ -19,3 +19,10 @@ vim.api.nvim_set_keymap("n", "<S-Tab>", "<<", { noremap = true, silent = true })
 -- 3. Additional helpful tab-related options (optional)
 vim.opt.smarttab = true -- Makes Tab work smarter (auto-expand when pressing Tab)
 vim.opt.softtabstop = 4 -- The number of spaces that represents a tab in edit mode (e.g., backspace)
+
+-- Format on space
+vim.keymap.set("n", "<leader>cf", ":lua vim.lsp.buf.format({ async = true })<CR>")
+
+-- Block commenting
+-- vim.keymap.set("n", "<leader>/", ":lua require('Comment.api').toggle.linewise.current()<CR>")
+-- vim.keymap.set("v", "<leader>/", ":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>")
