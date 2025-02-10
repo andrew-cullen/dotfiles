@@ -17,6 +17,14 @@ return {
       local lspconfig = require("lspconfig")
       -- Python
       lspconfig.pyright.setup({})
+      lspconfig.ruff.setup({
+        cmd = { "/home/andrew/.local/bin/ruff", "server" },
+        filetypes = { "python" },
+        on_attach = function(client, bufnr)
+          --print("Ruff LSP attached!")
+          vim.api.nvim_echo({ { string.format("Ruff LSP attached to buffer %d", bufnr), "Normal" } }, true, {})
+        end,
+      })
       -- C/C++
       lspconfig.clangd.setup({
         cmd = { "clangd", "--background-index", "--clang-tidy" },

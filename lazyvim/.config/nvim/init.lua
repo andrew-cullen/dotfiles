@@ -5,7 +5,7 @@ require("config.lazy")
 vim.lsp.set_log_level("debug")
 
 local lspconfig = require("lspconfig")
-lspconfig.ruff_lsp.setup({
+lspconfig.ruff.setup({
   cmd = { "/home/andrew/.local/bin/ruff", "server" },
   filetypes = { "python" },
   on_attach = function(client, bufnr)
